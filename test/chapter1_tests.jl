@@ -56,3 +56,9 @@ end
         @test nonzero_count([0,1,2,3,4]) == 4
     end
 end
+
+@testset "linear_combination sums multiplication of tuple of scalars by tuple of vectors" begin
+    c = (0, 2, -1)
+    v = ([1,2,3], [4,5,6], [7,8,9])
+    @test linear_combination(c,v) == ((c[1]*v[1])+(c[2]*v[2])+(c[3]*v[3]))
+end
